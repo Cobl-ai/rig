@@ -447,8 +447,7 @@ fn add_props_false(schema: &mut serde_json::Value) {
 
         if obj.contains_key("properties") {
             let prop_names = if let Some(Value::Object(props_obj)) = obj.get("properties") {
-                props_obj
-                    .keys()
+                props_obj.keys()
                     .cloned()
                     .map(|prop| Value::String(prop))
                     .collect()
